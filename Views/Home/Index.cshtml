@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Welcome to the Dojo Survey! Please input your information below!</h1>
+    @model Survey
+    <form asp-action="Create" asp-controller="Home" method = "POST">
+        <span asp-validation-for="Name"></span>
+        <br>
+        <label asp-for="Name">Full Name: </label>
+        <input asp-for="Name">
+        <br>
+
+        <span asp-validation-for="Location"></span>
+        <label asp-for="Location">Location: </label>
+        <select asp-for="Location">
+            <option value="Seattle">Seattle</option>
+            <option value="Boise">Boise</option>
+            <option value="Portland">Portland</option>
+            <option value="LA">LA</option>
+            <option value="Dallas">Dallas</option>
+        </select>
+        <br>
+
+        <span asp-validation-for="Language"></span>
+        <label asp-for="Language">Language: </label>
+        <select asp-for="Language">
+            <option value="CS">CS</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="MEAN">MEAN</option>
+        </select>
+        <br>
+
+        <span asp-validation-for="Comment"></span>
+        <label asp-for="Comment">Comment: </label><br>
+        <textarea asp-for="Comment" rows="5"></textarea>
+        <br>
+        <input class="btn" type="submit" value="submit">
+    </form>
+
+</div>
